@@ -14,6 +14,13 @@ const splitSentence = (string) => {
 console.log(splitSentence('Oi EU SOu uma casa'));
 
 // Requisito 2 - Crie uma função que calcula a quantidade de pontos em um campeonato de futebol
+const footballPoints = (wins, ties) => {
+  wins *= 3;
+  ties *= 1;
+  let points = wins + ties;
+  return points;
+}
+console.log(footballPoints(1, 1));
 
 // Requisito 3 - Crie uma função que adiciona músicas em uma playlist
 
