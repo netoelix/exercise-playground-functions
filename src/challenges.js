@@ -11,7 +11,7 @@ const splitSentence = (string) => {
   let newSentence = string.split(' ');
   return newSentence;
 };
-console.log(splitSentence('Oi EU SOu uma casa'));
+//console.log(splitSentence('Oi EU SOu uma casa'));
 
 // Requisito 2 - Crie uma função que calcula a quantidade de pontos em um campeonato de futebol
 const footballPoints = (wins, ties) => {
@@ -20,10 +20,20 @@ const footballPoints = (wins, ties) => {
   let points = wins + ties;
   return points;
 }
-console.log(footballPoints(1, 1));
+//console.log(footballPoints(1, 1));
 
 // Requisito 3 - Crie uma função que adiciona músicas em uma playlist
-
+const addMusics = (artistName, musicName, musicTime) => {
+  let playlist = [];
+  let music = {
+    artist: artistName,
+    music: musicName,
+    musicTime: musicTime,
+  };
+  playlist.push(music);
+  return playlist;
+}
+//console.log(addMusics('Rihanna','Sei la', 50));
 // =================================================
 // PARTE 2
 // =================================================
