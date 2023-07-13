@@ -73,7 +73,6 @@ const addNewItem = (data, category, item, price, ingredients, calories) => {
   data[category].push(newProduct);
   return newProduct;
 };
-console.log();
 // Requisito 7 - Crie uma função que conta a quantidade de pessoas por gênero
 const counterGender = (data) => {
   let men = 0;
@@ -95,6 +94,16 @@ const counterGender = (data) => {
 // =================================================
 
 // Requisito 8 - Crie uma função que retorna os elementos de um determinado estado
+
+const filterState = (data, state) => {
+  let newStates = [];
+  for (let index = 0; index < data.guests.length; index += 1) {
+    if (state === data.guests[index].address.state) {
+      newStates.push(data.guests[index]);
+    }
+  }
+  return newStates;
+};
 
 // Requisito 9 - Crie uma função que altera a propriedade `picture`
 
