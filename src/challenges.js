@@ -11,7 +11,6 @@ const splitSentence = (string) => {
   let newSentence = string.split(' ');
   return newSentence;
 };
-//console.log(splitSentence('Oi EU SOu uma casa'));
 
 // Requisito 2 - Crie uma função que calcula a quantidade de pontos em um campeonato de futebol
 const footballPoints = (wins, ties) => {
@@ -19,26 +18,33 @@ const footballPoints = (wins, ties) => {
   ties *= 1;
   let points = wins + ties;
   return points;
-}
-//console.log(footballPoints(1, 1));
+};
 
 // Requisito 3 - Crie uma função que adiciona músicas em uma playlist
-const addMusics = (artistName, musicName, musicTime) => {
-  let playlist = [];
+let playlist = [];
+const addMusics = (artistName, musicName, musicTimer) => {
   let music = {
     artist: artistName,
     music: musicName,
-    musicTime: musicTime,
+    musicTime: musicTimer,
   };
   playlist.push(music);
   return playlist;
-}
-//console.log(addMusics('Rihanna','Sei la', 50));
+};
 // =================================================
 // PARTE 2
 // =================================================
 
 // Requisito 4 - Crie uma função que retorna o produto mais caro de acordo com uma categoria
+const moreExpensive = (data, category) => {
+  let product = data[category][0];
+  for (let index = 1; index < data[category].length; index += 1) {
+    if (product.price < data[category][index].price) {
+      product = data[category][index];
+    }
+  }
+  return `O produto mais caro é: ${product.name}, que custa: R$${product.price.toFixed(2)}.`;
+};
 
 // Requisito 5 - Crie uma função que verifica se um determinado item já existe
 
