@@ -48,6 +48,15 @@ const moreExpensive = (data, category) => {
 
 // Requisito 5 - Crie uma função que verifica se um determinado item já existe
 
+const checkItem = (data, category, item) => {
+  let productExist = false;
+  for (let index = 0; index < data[category].length; index += 1) {
+    if (item === data[category][index].name) {
+      productExist = true;
+    }
+  }
+  return productExist;
+};
 // Requisito 6 - Crie uma função que adiciona um novo item caso ele ainda não exista
 
 // Requisito 7 - Crie uma função que conta a quantidade de pessoas por gênero
