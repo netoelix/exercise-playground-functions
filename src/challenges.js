@@ -116,9 +116,43 @@ const changePicture = (data, link) => {
   return newData;
 };
 
-console.log(changePicture(guestsDatabase, 'https://picsum.photos/200/300'));
 // Requisito 10 - Crie um função que gera um relatório
 
+const generateDate = (data) => {
+  let avgAge = 0;
+  let totalAge = 0;
+  for (let index = 0; index < data.guests.length; index += 1) {
+    totalAge += data.guests[index].age;
+  }
+  avgAge = totalAge / data.guests.length;
+  avgAge = Number(avgAge.toFixed(2));
+
+  return avgAge;
+};
+const generateCountryes = (data) => {
+  let countriesOrganize = [];
+  for (let index = 0; index < data.guests.length; index += 1) {
+    let countriesNew = data.guests[index].country;
+    if (!countriesOrganize.includes(countriesNew)) {
+      countriesOrganize.push(countriesNew);
+    }
+  }
+  countriesOrganize.sort();
+  return countriesOrganize;
+};
+const generateReport = (data) => {
+  let totalGuests = data.guests.length;
+  let totalGender = counterGender(data);
+
+  let newReport = {
+    totalGuests,
+    totalGender,
+    avgAge: generateDate(data),
+    countries: generateCountryes(data),
+  };
+  return newReport;
+};
+console.log(generateReport(guestsDatabase));
 // Não modifique as linhas abaixo
 module.exports = {
   splitSentence: typeof splitSentence === 'function' ? splitSentence : (() => {}),
