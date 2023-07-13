@@ -107,6 +107,16 @@ const filterState = (data, state) => {
 
 // Requisito 9 - Crie uma função que altera a propriedade `picture`
 
+const changePicture = (data, link) => {
+  let newData = [];
+  for (let index = 0; index < data.guests.length; index += 1) {
+    data.guests[index].picture = link;
+    newData.push(data.guests[index]);
+  }
+  return newData;
+};
+
+console.log(changePicture(guestsDatabase, 'https://picsum.photos/200/300'));
 // Requisito 10 - Crie um função que gera um relatório
 
 // Não modifique as linhas abaixo
