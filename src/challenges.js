@@ -153,7 +153,7 @@ const generateReport = (data) => {
   return newReport;
 };
 console.log(generateReport(guestsDatabase));
-// Não modifique as linhas abaixo
+// Não modifique as linhas abaixo (codigo desenvolvido pela Trybe)
 module.exports = {
   splitSentence: typeof splitSentence === 'function' ? splitSentence : (() => {}),
   footballPoints: typeof footballPoints === 'function' ? footballPoints : (() => {}),
